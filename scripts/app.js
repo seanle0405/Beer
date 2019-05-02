@@ -13,16 +13,16 @@ const belgianStyles = [{name: "Belgian Dubbel", number: 58},{name: "Belgian Trip
 
 $(()=>{	
 
-	const seeTripel = () =>{$.ajax({
+	const seeBeer = (styleId, appendTo) =>{$.ajax({
 		    url: "https://sandbox-api.brewerydb.com/v2/beers/?key=a31a5d42fca9a21b3b49895bc601e550",
 		    type: "GET",
 		    data: { 
-		    	 "styleId": 59,
+		    	 "styleId": styleId,
 		    	 "withBreweries": "Y" 
 		    }
 			}).then((info) =>{
 				const $options = $("<div>").addClass("options")
-				$options.appendTo("#tripel")
+				$options.appendTo(appendTo)
 				for(let i = 0; i < info.data.length; i++){
 					if(info.data[i].description != null){
 						const $beer = $("<div>").addClass("beer")
@@ -40,8 +40,14 @@ $(()=>{
 			});
 	}
 
-	$("#moreTripel").on("click", seeTripel)
+	$("#moreTripel").on("click", () =>{seeBeer(59, "#tripel")})
 	$("#lessTripel").on("click", () =>{
 		$("#tripel").children(".options").remove()
 	})
+	$("#moreBlonde").on("click", () =>{seeBeer(61,"#blonde")})
+	$("#lessBlonde").on("click", () =>{
+		$("#blonde").children(".options").remove()
+	})
+
+
 })
