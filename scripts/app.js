@@ -13,19 +13,27 @@ const belgianStyles = [{name: "Belgian Dubbel", number: 58},{name: "Belgian Trip
 
 $(()=>{	
 
-		$.ajax({
-	    url: "https://sandbox-api.brewerydb.com/v2/beers/?key=a31a5d42fca9a21b3b49895bc601e550",
-	    type: "GET",
-	    data: { 
-	    	 "styleId": 59,
-	    	 "withBreweries": "Y" 
-	    }
-		}).then((info) =>{
-		  // alert("Retrieved " + info.data.length + " records from the dataset!");
-		  // console.log(info.data[2])
-		  console.log(info)
-		}, (error) =>{
-			console.error(error)
-		});
-	
+	const seeTripel = () =>{$.ajax({
+		    url: "https://sandbox-api.brewerydb.com/v2/beers/?key=a31a5d42fca9a21b3b49895bc601e550",
+		    type: "GET",
+		    data: { 
+		    	 "styleId": 59,
+		    	 "withBreweries": "Y" 
+		    }
+			}).then((info) =>{
+				for(let i = 0; i < info.data.length; i++){
+					
+				}
+				const $options = $("<div>").addClass("options")
+				$options.insertAfter("#tripel")
+				$options.html(`
+					<h2>${info.data[0].name}   ABV ${info.data[0].abv}%</h2>
+					<p>${info.data[0].description}</p>
+					`)
+				console.log(info)
+			}, (error) =>{
+				console.error(error)
+			});
+	}
+	seeTripel()
 })
