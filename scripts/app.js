@@ -21,19 +21,27 @@ $(()=>{
 		    	 "withBreweries": "Y" 
 		    }
 			}).then((info) =>{
-				for(let i = 0; i < info.data.length; i++){
-					
-				}
 				const $options = $("<div>").addClass("options")
-				$options.insertAfter("#tripel")
-				$options.html(`
-					<h2>${info.data[0].name}   ABV ${info.data[0].abv}%</h2>
-					<p>${info.data[0].description}</p>
-					`)
+				$options.appendTo("#tripel")
+				for(let i = 0; i < info.data.length; i++){
+					if(info.data[i].description != null){
+						const $beer = $("<div>").addClass("beer")
+						$options.append($beer)
+						$beer.html(`
+							<h2>${info.data[i].name}   ABV ${info.data[i].abv}%</h2>
+							<p>${info.data[i].description}</p>
+						`)
+					}
+				}
+					
 				console.log(info)
 			}, (error) =>{
 				console.error(error)
 			});
 	}
-	seeTripel()
+
+	$("#moreTripel").on("click", seeTripel)
+	$("#lessTripel").on("click", () =>{
+		$("#tripel").children(".options").remove()
+	})
 })
