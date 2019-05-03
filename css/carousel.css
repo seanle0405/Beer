@@ -1,0 +1,77 @@
+.carousel-container {
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+}
+.carousel-divs {
+	width: 80%;
+}
+.carousel-divs div {
+  display: none;
+  width: 400px;
+  height: 400px;
+  background: cover;
+  position: relative;
+}
+.carousel-divs div:first-of-type{
+  display: block;
+}
+
+.carousel-button {
+	align-self: center;
+	text-align: center;
+}
+#beer_cheese_car{
+	background-image: url("../images/beer_cheese.jpg");
+}
+
+#beers_car{
+	background-image: url("../images/beers.jpg")
+}
+#dubbel_car{
+	background-image: url("../images/dubbel.jpg");
+}
+#lambic_car{
+	background-image: url("../images/lambic.jpg")
+}
+#quad_car{
+	background-image: url("../images/quad.jpg");
+}
+#saison_car{
+	background-image: url("../images/saison.jpg");
+}
+#trappist_car{
+	background-image: url("../images/trappist_beer.jpg");
+}
+#tripel_car{
+	background-image: url("../images/tripel.jpg");
+}
+#witbier_car{
+	background-image: url("../images/witbier.jpg")
+}
+
+p{
+	color: white;
+	background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  opacity: 0;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+ }
+
+
+.show-description p{
+ 	height: 300px;
+ 	opacity: 1;
+}
