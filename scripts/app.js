@@ -42,6 +42,13 @@ $(()=>{
 	$("#lessBlonde").on("click", () =>{
 		$("#blonde").children(".options").remove()
 	})
-
+	$("#moreDubbel").on("click", () =>{seeBeer(58,"#dubbel")})
+	$("#lessDubbel").on("click", () =>{
+		$("#dubbel").children(".options").remove()
+	})
+	$("#moreQuad").on("click", () =>{seeBeer(60,"#quad")})
+	$("#lessQuad").on("click", () =>{
+		$("#quad").children(".options").remove()
+	})
 
 })
