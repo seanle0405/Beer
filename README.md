@@ -4,4 +4,4 @@
 
 #Technologies used: Sticky Nav Bar, Carousel, Dropdown Menu
 
-#Unsolved problems: Getting the "show-description" toggleClass to work.
+#Unsolved problems: Getting the "show-description" toggleClass to work. Didn't have enough time to add breweries pages.

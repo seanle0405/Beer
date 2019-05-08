@@ -14,6 +14,18 @@ main{
 	flex-direction: column;
 }
 
+.rem-op{
+	display: none;
+}
+
+.abv{
+	float: right;
+}
+
+.inside-text-img{
+	float: right;
+}
+
 .nav{
 	overflow: hidden;
 	background-color: #333;
